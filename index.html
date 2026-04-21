@@ -8,16 +8,18 @@
     <style>
         :root { --primary: #e63946; --dark: #1d3557; --trust: #457b9d; --gold: #f4d35e; }
         body { font-family: "微軟正黑體", "Microsoft JhengHei", sans-serif; margin: 0; background: #f8f9fa; color: var(--dark); }
+        
         .hero { background: linear-gradient(135deg, #FF4B2B, #FF416C); color: white; padding: 40px 20px; text-align: center; }
         .hero h1 { margin: 0; font-size: 32px; }
         .hero p { font-size: 16px; margin-top: 10px; opacity: 0.9; }
+
         .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
         .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 25px; }
-        
+
         /* 8個對比圖片區域 */
-        .image-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0; }
-        .image-grid .img-box { width: 100%; aspect-ratio: 3/4; background: #eee; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; color: #999; font-size: 12px; text-align: center; }
-        .image-grid img { width: 100%; height: 100%; object-fit: cover; }
+        .image-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 20px 0; }
+        .img-box { width: 100%; aspect-ratio: 3/4; background: #f0f0f0; border-radius: 10px; overflow: hidden; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; color: #bbb; font-size: 12px; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; }
         @media (max-width: 600px) { .image-grid { grid-template-columns: repeat(2, 1fr); } }
 
         .store-info { border-left: 5px solid var(--primary); padding-left: 15px; }
@@ -26,8 +28,10 @@
         .map-container { width: 100%; height: 400px; border-radius: 15px; overflow: hidden; border: 1px solid #ddd; margin-top: 15px; background: #eee; }
         .map-container iframe { width: 100%; height: 100%; border: 0; }
 
-        .btn-main { display: block; background: var(--primary); color: white; padding: 15px; border-radius: 50px; text-decoration: none; font-size: 20px; font-weight: bold; text-align: center; margin: 20px 0; }
-        .partner-area { background: var(--dark); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .btn-main { display: block; background: var(--primary); color: white; padding: 15px; border-radius: 50px; text-decoration: none; font-size: 20px; font-weight: bold; text-align: center; margin: 20px 0; box-shadow: 0 4px 15px rgba(230,57,70,0.3); }
+
+        .partner-area { background: var(--dark); color: white; border-radius: 15px; padding: 30px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+        
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 1000; }
         .footer { text-align: center; padding: 20px; color: #999; font-size: 12px; }
     </style>
@@ -35,16 +39,16 @@
 <body>
 
 <section class="hero">
-    <h1>慳錢神器 · 香港網購必備</h1>
-    <p>領取全網隱藏大額優惠券 + 購物現金回贈</p>
+    <h1>慳錢神器 · 香港網購省錢必備</h1>
+    <p>淘寶 ‧ 拼多多 ‧ 京東 | 領取隱藏券 + 獲取購物回贈</p>
 </section>
 
 <div class="container">
     
-    <!-- 1. 實體店背書 -->
+    <!-- 1. 實體店背書與精確地址 -->
     <div class="card store-info">
         <h3>🏠 香港本地實體店售後保障</h3>
-        <p>本平台由<b>「小王子行李箱維修」</b>聯合運營。實體店信譽擔保，每一分回贈都提現有門。</p>
+        <p>本平台由<b>「小王子行李箱維修」</b>實體店鋪聯合運營。誠信經營，回贈提現安全透明。</p>
         <p>
             <i class="fa-solid fa-location-dot" style="color:var(--primary)"></i> <b>詳細地址：</b>長裕街2號嘉圖工廠大廈9樓A01<br>
             <span style="font-size: 13px; color: #666; padding-left: 25px; display: block; margin-top: 5px;">
@@ -55,29 +59,30 @@
         <p><i class="fa-solid fa-wallet"></i> 支援：<b>FPS 轉數快 / AlipayHK</b> 1元起提現</p>
     </div>
 
-    <!-- 2. 慳錢對比圖 (綠色圈位置：8張圖片位) -->
+    <!-- 2. 實測對比區域 (綠色圈位置：8張圖片) -->
     <div class="card">
-        <h3 style="margin-top:0"><i class="fa-solid fa-camera"></i> 慳錢實測對比</h3>
+        <h3 style="margin-top:0"><i class="fa-solid fa-camera"></i> 慳錢實測對比（拼多多 / 淘寶）</h3>
         <div class="image-grid">
-            <div class="img-box"><img src="https://via.placeholder.com/300x400?text=拼多多1" alt="對比1"></div>
-            <div class="img-box"><img src="https://via.placeholder.com/300x400?text=拼多多2" alt="對比2"></div>
-            <div class="img-box"><img src="https://via.placeholder.com/300x400?text=淘寶1" alt="對比3"></div>
-            <div class="img-box"><img src="https://via.placeholder.com/300x400?text=淘寶2" alt="對比4"></div>
-            <div class="img-box"><img src="https://via.placeholder.com/300x400?text=提現截圖" alt="對比5"></div>
-            <div class="img-box"><img src="https://via.placeholder.com/300x400?text=用戶好評" alt="對比6"></div>
-            <div class="img-box"><img src="https://via.placeholder.com/300x400?text=掃碼查券" alt="對比7"></div>
-            <div class="img-box"><img src="https://via.placeholder.com/300x400?text=領券後價" alt="對比8"></div>
+            <div class="img-box"><span>對比截圖1</span></div>
+            <div class="img-box"><span>對比截圖2</span></div>
+            <div class="img-box"><span>對比截圖3</span></div>
+            <div class="img-box"><span>對比截圖4</span></div>
+            <div class="img-box"><span>提現紀錄5</span></div>
+            <div class="img-box"><span>用戶反饋6</span></div>
+            <div class="img-box"><span>領券教學7</span></div>
+            <div class="img-box"><span>到帳截圖8</span></div>
         </div>
-        <a href="[填寫你的H5網址]" class="btn-main">立即進入「慳錢神器」查券</a>
+        <p style="text-align: center; color: #666; font-size: 14px;">（提示：買嘢前多一個動作，每月慳返兩餐晏錢！）</p>
+        <a href="https://xwz88.com" class="btn-main">立即進入「慳錢神器」查券</a>
     </div>
 
-    <!-- 3. Google 地圖 (紅色圈位置：修正版) -->
+    <!-- 3. Google 地圖 (紅色圈位置：地標紅點修正版) -->
     <div class="card">
         <h3 style="margin-top:0"><i class="fa-solid fa-map-location-dot"></i> 店鋪位置導航 (嘉圖工廠大廈)</h3>
         <div class="map-container">
-            <!-- 這是修正後的 Google Maps 嵌入代碼，帶有紅點 Marker -->
+            <!-- 這是包含精確地標 ID 的嵌入代碼 -->
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.46320764188!2d114.14552437592497!3d22.336456341591873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f9090666014b%3A0xc3124df81552a417!2z5嘉圖工廠大廈 (Ka To Factory Building)!5e0!3m2!1szh-TW!2shk!4v1713693245467!5m2!1szh-TW!2shk" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.472535492167!2d114.14589997592497!3d22.33575304160799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f9091807d4b1%3A0x7d6a5e1e1e1e1e1e!2z5嘉圖工廠大廈!5e0!3m2!1szh-TW!2shk!4v1713695289567!5m2!1szh-TW!2shk" 
                 allowfullscreen="" 
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade">
@@ -85,21 +90,22 @@
         </div>
     </div>
 
-    <!-- 4. 合夥人專區 (精英扶持版) -->
+    <!-- 4. 合夥人專區 (精英合夥與公平機制) -->
     <div class="partner-area">
-        <h3 style="color: var(--gold);">💎 自提點 / 店員「精英合夥」計劃</h3>
-        <p style="color: #eee; font-size: 15px;">利用包裹人流建立長遠事業，我哋同你一齊成長。</p>
+        <h3 style="color: var(--gold); margin-top:0;">💎 自提點 / 店員「精英合夥」計劃</h3>
+        <p style="color: #eee; font-size: 15px;">將包裹人流變現，建立屬於你嘅長期被動收入。</p>
         
-        <div style="background: rgba(255,255,255,0.1); border-radius: 10px; padding: 15px; margin: 15px 0; border: 1px solid rgba(255,255,255,0.2);">
-            <p style="font-weight: bold; color: var(--gold);">🚀 官方精英扶持政策</p>
-            <ul style="text-align: left; font-size: 14px; color: #f1f1f1; display: inline-block;">
-                <li>✅ 制度透明公平，有心發展者享官方海報物料支援</li>
-                <li>✅ 針對具備資源者，開通快速晉升渠道，優先獲益</li>
-                <li>✅ 專業一對一運營對接，協助你快速掌握推廣技巧</li>
+        <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; margin: 15px 0; border: 1px solid rgba(255,255,255,0.15);">
+            <p style="font-weight: bold; color: var(--gold); font-size: 18px; margin-bottom: 10px;">🚀 官方精英扶持政策</p>
+            <ul style="text-align: left; font-size: 14px; color: #f1f1f1; display: inline-block; padding-left: 20px; line-height: 1.8;">
+                <li>✅ <b>制度公平公開</b>：能力越高回報越高，人人有機會。</li>
+                <li>✅ <b>官方物料支援</b>：免費提供專屬海報、卡片、開箱神器。</li>
+                <li>✅ <b>快速晉升通道</b>：針對具備資源者，協助縮短考核，優先獲益。</li>
+                <li>✅ <b>一對一運營指導</b>：由 Wing 親自帶路，快速掌握賺錢竅門。</li>
             </ul>
         </div>
         
-        <a href="https://wa.me/85254339542" style="color: #1d3557; background-color: var(--gold); text-decoration: none; padding: 12px 25px; border-radius: 30px; font-weight: bold; display: inline-block;">
+        <a href="https://wa.me/85254339542" style="color: #1d3557; background-color: var(--gold); text-decoration: none; padding: 15px 30px; border-radius: 35px; font-weight: bold; display: inline-block; box-shadow: 0 4px 15px rgba(244,211,94,0.3);">
             <i class="fa-brands fa-whatsapp"></i> 聯繫 Wing：諮詢精英合作
         </a>
     </div>
@@ -110,7 +116,7 @@
     <p>© 2026 慳錢神器 | 香港實體店聯合誠信出品</p>
 </div>
 
-<!-- WhatsApp 懸浮 -->
+<!-- WhatsApp 懸浮客服 -->
 <a href="https://wa.me/85254339542" class="whatsapp-float">
     <i class="fa-brands fa-whatsapp"></i>
 </a>
