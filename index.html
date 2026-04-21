@@ -3,88 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>慳錢神器 - 香港網購回贈首選 | 實體店信譽擔保</title>
+    <title>慳錢神器 - 香港網購回贈首選 | 實體店售後保障</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root { --primary: #FF2D4D; --secondary: #FF8200; --trust: #128C7E; --bg: #f8f9fa; }
-        body { font-family: "Microsoft JhengHei", sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.6; }
-        header { background: white; padding: 20px; text-align: center; border-bottom: 2px solid var(--primary); }
-        .hero { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 40px 20px; text-align: center; }
-        .hero h1 { margin: 0; font-size: 28px; }
-        .hero p { font-size: 18px; opacity: 0.9; }
-        .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
-        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .trust-badge { border-left: 5px solid var(--trust); }
-        .price-compare { display: flex; justify-content: space-around; align-items: center; margin: 20px 0; }
-        .price-item { text-align: center; }
-        .old-price { text-decoration: line-through; color: #999; }
-        .new-price { font-size: 24px; color: var(--primary); font-weight: bold; }
-        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; margin-top: 10px; }
-        .partner-box { background: #333; color: #FFCE54; border: 2px dashed #FFCE54; text-align: center; }
-        .footer { text-align: center; padding: 30px; font-size: 14px; color: #888; }
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: var(--trust); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 100; text-decoration: none; }
-        img.store-photo { width: 100%; border-radius: 8px; margin: 10px 0; }
+        :root { --primary: #e63946; --dark: #1d3557; --trust: #457b9d; --gold: #f4d35e; }
+        body { font-family: "微軟正黑體", "Microsoft JhengHei", sans-serif; margin: 0; background: #f8f9fa; color: var(--dark); }
+        
+        /* 頂部漸變 */
+        .hero { background: linear-gradient(135deg, #FF4B2B, #FF416C); color: white; padding: 40px 20px; text-align: center; }
+        .hero h1 { margin: 0; font-size: 32px; }
+        .hero p { font-size: 16px; margin-top: 10px; opacity: 0.9; }
+
+        .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
+        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 25px; }
+
+        /* 8個對比圖片區域 (綠色圈位置) */
+        .image-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0; }
+        .image-grid img { width: 100%; border-radius: 10px; border: 1px solid #eee; transition: 0.3s; cursor: pointer; }
+        .image-grid img:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        @media (max-width: 600px) { .image-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        /* 實體店信息 */
+        .store-info { border-left: 5px solid var(--primary); padding-left: 15px; }
+        .store-info h3 { margin-top: 0; color: var(--primary); }
+
+        /* 價格對比 */
+        .compare-box { background: #fff5f5; border-radius: 10px; padding: 20px; text-align: center; }
+        .compare-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+        .compare-price { font-size: 28px; font-weight: bold; color: var(--primary); }
+
+        /* Google 地圖 (紅色圈位置) */
+        .map-container { width: 100%; height: 350px; border-radius: 15px; overflow: hidden; border: 1px solid #ddd; margin-top: 15px; }
+        .map-container iframe { width: 100%; height: 100%; border: 0; }
+
+        /* 下方按鈕 */
+        .btn-main { display: block; background: var(--primary); color: white; padding: 15px; border-radius: 50px; text-decoration: none; font-size: 20px; font-weight: bold; text-align: center; margin: 20px 0; }
+
+        /* 合夥人專區 */
+        .partner-area { background: var(--dark); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .partner-area h3 { color: var(--gold); }
+        
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 1000; }
+        .footer { text-align: center; padding: 20px; color: #999; font-size: 12px; }
     </style>
 </head>
 <body>
 
 <section class="hero">
-    <h1>慳錢神器 · 香港網購神技</h1>
-    <p>淘寶 ‧ 拼多多 ‧ 京東 ‧ 天貓 | 隱藏券即查即領</p>
+    <h1>慳錢神器 · 香港網購必備</h1>
+    <p>領取淘寶、拼多多、京東隱藏大額優惠券 + 購物現金回贈</p>
 </section>
 
 <div class="container">
-    <!-- 實體店背書 -->
-    <div class="card trust-badge">
-        <h3>🏠 香港本地實體店信譽擔保</h3>
-        <p>我們不是純網絡平台，我們扎根香港多年！本平台由<b>「[小王子行李箱維修]」</b>聯合運營。誠信經營，香港公司售後支援，提現有保障。</p>
-        <p><i class="fa-solid fa-location-dot"></i> 地址：[香港荔枝角長裕街2號嘉圖工廠大廈9樓A01]</p>
-        <p><i class="fa-solid fa-shield-halved"></i> 支援：<b>FPS 轉數快 / AlipayHK</b> 1元起提現</p>
+    
+    <!-- 1. 實體店背書與地址 -->
+    <div class="card store-info">
+        <h3>🏠 香港本地實體店售後保障</h3>
+        <p>本平台由<b>「小王子行李箱維修」</b>聯合運營。誠信經營，提現有保障。</p>
+        <p><i class="fa-solid fa-location-dot"></i> <b>公司地址：</b>九龍荔枝角長裕街2號嘉圖工廠大廈9樓A01</p>
+        <p><i class="fa-solid fa-clock"></i> <b>服務時間：</b>週一至週六 11:00 - 20:00</p>
+        <p><i class="fa-solid fa-wallet"></i> 支援：<b>FPS 轉數快 / AlipayHK</b> 秒速到帳</p>
     </div>
 
-    <!-- 省錢對比 -->
+    <!-- 2. 真實購物對比圖區域 (綠色圈 8張圖) -->
     <div class="card">
-        <h3>💰 點解要領券？睇下對比就知！</h3>
-        <div class="price-compare">
-            <div class="price-item">
-                <p>直接購買</p>
-                <span class="old-price">HK$299</span>
-            </div>
-            <div class="fa-solid fa-arrow-right"></div>
-            <div class="price-item">
-                <p>使用慳錢神器</p>
-                <span class="new-price">HK$199</span>
-            </div>
+        <h3 style="margin-top:0"><i class="fa-solid fa-camera"></i> 慳錢實測對比（真實截圖）</h3>
+        <div class="image-grid">
+            <!-- 請將 src 替換為你的圖片網址 -->
+            <img src="https://via.placeholder.com/200x250?text=對比圖1" alt="對比1">
+            <img src="https://via.placeholder.com/200x250?text=對比圖2" alt="對比2">
+            <img src="https://via.placeholder.com/200x250?text=對比圖3" alt="對比3">
+            <img src="https://via.placeholder.com/200x250?text=對比圖4" alt="對比4">
+            <img src="https://via.placeholder.com/200x250?text=對比圖5" alt="對比5">
+            <img src="https://via.placeholder.com/200x250?text=對比圖6" alt="對比6">
+            <img src="https://via.placeholder.com/200x250?text=對比圖7" alt="對比7">
+            <img src="https://via.placeholder.com/200x250?text=對比圖8" alt="對比8">
         </div>
-        <p style="text-align: center;"><b>慳返嘅錢，夠你俾單集運費/食餐晏！</b></p>
-        <center><a href="[xwz88.com]" class="btn">立即開啟省錢模式</a></center>
+        <p style="text-align: center; color: #666;">（點擊圖片可查看大圖）</p>
+        <a href="[填寫你的H5網址]" class="btn-main">立即進入「慳錢神器」查券</a>
     </div>
-<!-- 三步教學 -->
+
+    <!-- 3. Google 地圖 (紅色圈) -->
     <div class="card">
-        <h3 style="margin-top:0">只需三步 ‧ 錢到你手</h3>
-        <div class="steps">
-            <div>
-                <div class="step-circle">1</div>
-                <p><b>Copy</b><br>複製商品鏈接</p>
-            </div>
-            <div>
-                <div class="step-circle">2</div>
-                <p><b>Paste</b><br>回來自動領券</p>
-            </div>
-            <div>
-                <div class="step-circle">3</div>
-                <p><b>Cash</b><br>收貨領回贈</p>
-            </div>
+        <h3 style="margin-top:0"><i class="fa-solid fa-map-location-dot"></i> 店鋪位置導航</h3>
+        <div class="map-container">
+            <!-- 這裡是荔枝角嘉圖工廠大廈的地圖位置 -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.46320764188!2d114.1481!3d22.3364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f9091807d4b1%3A0x7d6a5e1e1e1e1e1e!2z6I2U5p6d6KeS6ZW36KOV6KGXMuitn-WYieWcl-W3peW7oOWkp-W7iA!5e0!3m2!1szh-TW!2shk!4v1713690000000!5m2!1szh-TW!2shk" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
-    <!-- 合夥人招募 -->
-    <div class="card partner-box">
-        <h3>💎 自提點/店員「0成本」合夥計劃</h3>
-        <p>你每日遞出去嘅包裹，都可以變成你嘅被動收入！</p>
-        <p>🔥 <b>鑽石會員特權：</b> 享 20% 直屬分傭 + 10% 間接分傭</p>
-        <p>無需入貨，無須解釋，貼張海報，每日多賺幾百蚊私伙錢。</p>
-        <a href="https://wa.me/[85254339542]" style="color:#FFCE54; font-weight:bold;">點擊 WhatsApp 諮詢：我要做合夥人</a>
+
+    <!-- 4. 合夥人專區 -->
+    <div class="partner-area">
+        <h3>💎 自提點/店員「0成本」加盟計劃</h3>
+        <p>將包裹人流變現，每日順手遞張卡，每月多賺幾千蚊私伙錢。</p>
+        <p style="font-weight: bold; font-size: 18px;">🔥 直接開通「鑽石合夥人」最高級別分傭</p>
+        <a href="https://wa.me/852[填寫你的電話]" style="color: var(--gold); text-decoration: none; border: 2px solid var(--gold); padding: 10px 20px; border-radius: 5px; display: inline-block; margin-top: 10px;">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp 聯繫 Wing 諮詢
+        </a>
     </div>
+
 </div>
 
 <div class="footer">
@@ -92,8 +109,8 @@
     <p>商業登記證號碼：[填寫你的BR號碼]</p>
 </div>
 
-<!-- WhatsApp 懸浮球 -->
-<a href="https://wa.me/[85254339542]" class="whatsapp-float">
+<!-- WhatsApp 客服 -->
+<a href="https://wa.me/852[填寫你的電話]" class="whatsapp-float">
     <i class="fa-brands fa-whatsapp"></i>
 </a>
 
